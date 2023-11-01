@@ -1,0 +1,14 @@
+data_source retail:
+  type: bigquery
+  connection:
+    account_info_json_path: /usr/local/airflow/include/gcp/service_account.json
+    auth_scopes:
+    - https://www.googleapis.com/auth/bigquery
+    - https://www.googleapis.com/auth/cloud-platform
+    - https://www.googleapis.com/auth/drive
+    project_id: 'cobalt-vector-403606'
+    dataset: retail
+soda_cloud: #alkhawa @cc..D
+  host: cloud.us.soda.io
+  api_key_id: b2a2349b-3d46-47af-ac4f-0f3ba2c65e2b
+  api_key_secret: TDgjK0O1Y-cNB8jLvr1iilGOMWyDU2epHZihLQ4844LG2uIlEDcWvQ

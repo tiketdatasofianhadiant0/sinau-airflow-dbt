@@ -1,0 +1,34 @@
+Komponen Airflow:
+1. airflow-scheduler 
+   The scheduler monitor all tasks and DAGs, then trigger the task once their DEPENDENCIES are COMPLETE
+2. airflow-webserver
+   GUI at http://localhost:8080
+3. airflow-worker
+   The worker that executes the tasks given by scheduler
+4. airflow-triggerer
+   The triggerer runs an EVENT LOOP for deferrable tasks
+5. airflow-init
+   The initialization service
+6. postgres
+   Database
+7. redis
+   broker that forwards messages from scheduler to worker
+
+
+1116  astro dev init
+1117  astro dev start
+1118  astro dev restart
+
+1119  astro dev bash
+      airflow tasks test retail upload_csv_to_gcs 2023-10-31
+
+      soda test-connection -d retail -c include/soda/configuration.yml
+      soda scan -d retail -c include/soda/configuration.yml include/soda/checks/sources/raw_invoices.yml
+
+
+dbt - 1 file 1 DAG see Hercules <dev & prod> kl udh merge ke develop nnt generate DAG --> Hercules khusus DBT
+
+generate DAG - di golang --> upload ke storage bucket GCS Airflow -> Perseus <staging>
+
+DAG - ada webhook yg bisa dihit dr airflow in case gagal hit
+
